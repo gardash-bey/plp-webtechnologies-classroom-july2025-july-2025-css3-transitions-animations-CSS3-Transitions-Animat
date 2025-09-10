@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS & JavaScript Interactive Experience</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Part 1: CSS3 Transitions and Animations -->
+    <section id="part1">
+        <h2>Part 1: CSS3 Transitions and Animations</h2>
+        <button class="fancy-btn">Hover Me!</button>
+        <div class="fade-box">I fade in and out!</div>
+        <div class="slide-box">I slide continuously!</div>
+    </section>
+
+    <!-- Part 2: JavaScript Functions -->
+    <section id="part2">
+        <h2>Part 2: JavaScript Functions</h2>
+        <button onclick="showSum()">Calculate Sum (3 + 4)</button>
+        <div id="sum-result"></div>
+        <button onclick="scopeDemo()">Scope Demo</button>
+        <div id="scope-result"></div>
+    </section>
+
+    <!-- Part 3: Combining CSS & JS -->
+    <section id="part3">
+        <h2>Part 3: Combining CSS & JavaScript</h2>
+        <button onclick="triggerBoxAnimation()">Animate the Box!</button>
+        <div id="animate-box" class="box">Watch me move!</div>
+        <button onclick="toggleModal()">Show Modal</button>
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="toggleModal()">&times;</span>
+                <p>This is a sliding modal!</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

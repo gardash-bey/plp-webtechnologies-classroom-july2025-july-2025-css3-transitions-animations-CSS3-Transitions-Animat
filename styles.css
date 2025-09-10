@@ -1,0 +1,131 @@
+/* =============================
+   Part 1: CSS3 Transitions and Animations
+   ============================= */
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4f8;
+    margin: 0;
+    padding: 0 0 40px 0;
+}
+section {
+    margin: 40px auto;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 24px;
+}
+
+.fancy-btn {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    color: #fff;
+    border: none;
+    padding: 14px 32px;
+    font-size: 1.1em;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(106,17,203,0.15);
+}
+.fancy-btn:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 8px 24px rgba(37,117,252,0.18);
+}
+
+.fade-box {
+    margin: 24px 0;
+    width: 200px;
+    height: 60px;
+    background: #ffecd2;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.2;
+    transition: opacity 1s;
+}
+.fade-box:hover {
+    opacity: 1;
+}
+
+.slide-box {
+    width: 120px;
+    height: 40px;
+    background: #b2fefa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideX 2s infinite alternate;
+}
+@keyframes slideX {
+    from { transform: translateX(0); }
+    to { transform: translateX(120px); }
+}
+
+/* =============================
+   Part 3: Combining CSS & JS
+   ============================= */
+.box {
+    width: 120px;
+    height: 60px;
+    background: #f7971e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    margin: 20px 0;
+    transition: background 0.3s;
+}
+.box.animated {
+    animation: moveBox 1s forwards;
+    background: #ffd200;
+}
+@keyframes moveBox {
+    0% { transform: translateY(0); }
+    60% { transform: translateY(-60px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.3);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+.modal.show {
+    display: flex;
+    opacity: 1;
+    pointer-events: auto;
+}
+.modal-content {
+    background: #fff;
+    padding: 32px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    position: relative;
+    animation: modalIn 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes modalIn {
+    from { transform: translateY(-80px) scale(0.8); opacity: 0; }
+    to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.close {
+    position: absolute;
+    top: 12px; right: 18px;
+    font-size: 2em;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close:hover {
+    color: #f7971e;
+}
